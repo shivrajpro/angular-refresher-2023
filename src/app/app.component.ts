@@ -8,6 +8,8 @@ import { PostComponent } from './post/post.component';
 })
 export class AppComponent implements OnInit, AfterViewInit {
   title = 'angular-refresher-2023';
+  isRed = true;
+  textColor = 'blue';
 
   @ViewChild(PostComponent) childComp = null;
 
@@ -25,5 +27,10 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   receiveMsg(evt:any){
     console.log('>> evt',evt);
+  }
+
+  onKeyEnter(){
+    // if(evt.keyCode == 13) console.log('>> enter key pressed');
+    console.log('>> enter key pressed');    
   }
 }
