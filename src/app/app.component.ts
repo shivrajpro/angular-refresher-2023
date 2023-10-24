@@ -14,12 +14,16 @@ export class AppComponent implements OnInit, AfterViewInit {
   constructor(){
     console.log('>> constructor',this.childComp);
   }
-  
+
   ngOnInit(): void {
     console.log('>> ngOnInit',this.childComp);
   }
 
   ngAfterViewInit(): void {
     console.log('>> ngAfterViewInit',this.childComp);
+  }
+
+  receiveMsg(evt:any){
+    console.log('>> evt',evt);
   }
 }
