@@ -9,9 +9,11 @@ import { PostComponent } from './post/post.component';
 export class AppComponent implements OnInit, AfterViewInit {
   @ViewChild(PostComponent) childComp = null;
 
-  postArr = new Array<string>;
-  stepName = '';
-  isActive = true;
+  userList = new Array<any>;
+  username = '';
+  email = '';
+  address = '';
+
   constructor(){
     // console.log('>> constructor',this.childComp);
   }
@@ -24,17 +26,11 @@ export class AppComponent implements OnInit, AfterViewInit {
     // console.log('>> ngAfterViewInit',this.childComp);
   }
 
-  onAddPost(){
-    const len = this.postArr.length + 1;
-    this.postArr.push(`post${len}`)
+  onAddUser(){
+    this.userList.push({ username: this.username,email:this.email,address:this.address})
   }
 
-  onDeletePost(index:number){
-    this.postArr.splice(index,1);
+  onDeleteUser(index:any){
+    this.userList.splice(index,1);
   }
-
-  onStepClick(step:string){
-    this.stepName = step;
-  }
-
 }
