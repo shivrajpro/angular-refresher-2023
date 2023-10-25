@@ -7,14 +7,11 @@ import { PostComponent } from './post/post.component';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit, AfterViewInit {
-  title = 'angular-refresher-2023';
-  isRed = true;
-  textColor = 'blue';
-  username:string = '';
-  textValue:string = 'some text value';
-
   @ViewChild(PostComponent) childComp = null;
 
+  postArr = new Array<string>;
+  stepName = '';
+  isActive = true;
   constructor(){
     // console.log('>> constructor',this.childComp);
   }
@@ -27,17 +24,17 @@ export class AppComponent implements OnInit, AfterViewInit {
     // console.log('>> ngAfterViewInit',this.childComp);
   }
 
-  receiveMsg(evt:any){
-    console.log('>> evt',evt);
+  onAddPost(){
+    const len = this.postArr.length + 1;
+    this.postArr.push(`post${len}`)
   }
 
-  onKeyUp(username:any){
-    // if(evt.keyCode == 13) console.log('>> enter key pressed');
-    console.log('>> enter key pressed',username.value);    
+  onDeletePost(index:number){
+    this.postArr.splice(index,1);
   }
 
-  onKeyEnter(){
-    // if(evt.keyCode == 13) console.log('>> enter key pressed');
-    console.log('>> enter key pressed=', this.textValue);    
+  onStepClick(step:string){
+    this.stepName = step;
   }
+
 }

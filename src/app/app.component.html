@@ -1,1 +1,39 @@
-<app-post></app-post>
+<!-- STRUCTURAL DIRECTIVE -->
+<!-- <button (click)="onAddPost()" >Add Post</button>
+<div *ngIf="postArr.length; then postList else noData" ></div>
+
+<ng-template #postList>
+    <ul>
+        <li *ngFor="let post of postArr; let i=index" > 
+            {{post}} - <button (click)="onDeletePost(i)" >Delete</button> 
+        </li>
+    </ul>
+</ng-template>
+
+<ng-template #noData>
+    <h2>No posts found</h2>
+</ng-template> -->
+
+<!-- <button (click)="onStepClick('step 1')">Step 1</button>
+<button (click)="onStepClick('step 2')">Step 2</button>
+<button (click)="onStepClick('step 3')">Step 3</button>
+
+<div [ngSwitch]="stepName" >
+    <p *ngSwitchCase="'step 1'" >Step 1</p>
+    <p *ngSwitchCase="'step 2'" >Step 2</p>
+    <p *ngSwitchCase="'step 3'" >Step 3</p>
+    <p *ngSwitchDefault>No Step Selected</p>
+</div> -->
+
+
+
+<!-- ATTRIBUTE DIRECTIVE -->
+<p 
+[ngStyle]="{
+    color: isActive ? 'red' : '', 
+    textTransform: isActive ? 'uppercase': ''
+}">Lorem ipsum dolor sit.</p>
+
+<p [ngClass]="{'highlight':isActive, 'make-bold':isActive}" >
+    Lorem, ipsum.
+</p>

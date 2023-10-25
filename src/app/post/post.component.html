@@ -12,11 +12,11 @@
 </div>
 
 <div class="form-result">
-    <h2 [class.highlight]="hasBg" > {{postTitle}} </h2>
+    <h2> <span [class.highlight]="hasBg">{{postTitle}}</span></h2>
     <img [src]="imgUrl" alt="post image" height="300" width="300" >
     <p> {{postDetails}} </p>
     <p>
-        <a [href]="postUrl" target="_blank" > More details </a>
+        <a [href]="postUrl" target="_blank" [style.display]="postUrl ? 'block':'none' "> More details </a>
     </p>
 </div>
 
