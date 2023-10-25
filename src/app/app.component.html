@@ -5,4 +5,7 @@
 <!-- style binding -->
 <h2 [class.text-red]="isRed" > Lorem ipsum dolor sit. </h2>
 <h3 [style.color]='textColor' > Lorem, ipsum. </h3>
-<input type="text" (keyup.enter)="onKeyEnter()" >
+<!-- <input type="text" (keyup.enter)="onKeyUp(username)" #username >
+<input type="text" (keyup.enter)="onKeyEnter()" [(ngModel)]="username" > -->
+<!-- <input type="text" (keyup.enter)="onKeyEnter()" [value]="textValue" > -->
+<input type="text" (keyup.enter)="onKeyEnter()" [ngModel]="textValue" >
