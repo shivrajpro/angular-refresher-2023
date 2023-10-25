@@ -11,6 +11,12 @@ export class PostComponent {
 
   @Output() msgEvt = new EventEmitter<String>();
 
+  postTitle = '';
+  imgUrl = '';
+  postDetails = '';
+  postUrl = '';
+  hasBg = false;
+
   sendMsg(){
     this.msgEvt.emit(this.outputChildMsg);
   }

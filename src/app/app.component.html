@@ -1,11 +1,1 @@
-<!-- <h1>in app component</h1>
-<app-navbar></app-navbar>
-<app-post (msgEvt)="receiveMsg($event)" ></app-post> -->
-
-<!-- style binding -->
-<h2 [class.text-red]="isRed" > Lorem ipsum dolor sit. </h2>
-<h3 [style.color]='textColor' > Lorem, ipsum. </h3>
-<!-- <input type="text" (keyup.enter)="onKeyUp(username)" #username >
-<input type="text" (keyup.enter)="onKeyEnter()" [(ngModel)]="username" > -->
-<!-- <input type="text" (keyup.enter)="onKeyEnter()" [value]="textValue" > -->
-<input type="text" (keyup.enter)="onKeyEnter()" [ngModel]="textValue" >
+<app-post></app-post>

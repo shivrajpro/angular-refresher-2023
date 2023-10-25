@@ -1,3 +1,22 @@
-<p>post works!</p>
-<button (click)="sendMsg()" >Send Msg</button>
-<app-post-list [fromParent]="postsList" ></app-post-list>
+
+<div class="form">
+    <input type="text" [(ngModel)]="postTitle" placeholder="post title" >
+    <textarea cols="30" rows="10" [(ngModel)]="postDetails" placeholder="post details" ></textarea>
+    <input type="text" [(ngModel)]="imgUrl" placeholder="image url" >
+    <input type="text" [(ngModel)]="postUrl" placeholder="post url" >
+    
+    <p>
+        <input type="checkbox" [(ngModel)]="hasBg">
+        <label>Add Background</label>
+    </p>
+</div>
+
+<div class="form-result">
+    <h2 [class.highlight]="hasBg" > {{postTitle}} </h2>
+    <img [src]="imgUrl" alt="post image" height="300" width="300" >
+    <p> {{postDetails}} </p>
+    <p>
+        <a [href]="postUrl" target="_blank" > More details </a>
+    </p>
+</div>
+
