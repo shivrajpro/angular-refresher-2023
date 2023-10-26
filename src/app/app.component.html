@@ -24,10 +24,11 @@
     </thead>
     <tbody>
         <tr *ngFor="let user of userList; let i=index">
-            <td>                
-                {{user.username}}
-                {{user.email}}
-                {{user.address}}
+            <td> {{i}} </td>
+            <td>{{user.username}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.address}}</td>
+            <td>
                 <button (click)="onDeleteUser(i)" >Delete</button>
             </td>
 
