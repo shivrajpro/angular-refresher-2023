@@ -7,13 +7,17 @@ import { PostComponent } from './post/post.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { PostListComponent } from './post/post-list/post-list.component';
 import { FormsModule } from '@angular/forms';
+import { PrefixPipe } from './pipes/prefix.pipe';
+import { SummaryPipe } from './pipes/summary.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     PostComponent,
     NavbarComponent,
-    PostListComponent
+    PostListComponent,
+    PrefixPipe,
+    SummaryPipe
   ],
   imports: [
     BrowserModule,

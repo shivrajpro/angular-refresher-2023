@@ -9,11 +9,7 @@ import { PostComponent } from './post/post.component';
 export class AppComponent implements OnInit, AfterViewInit {
   @ViewChild(PostComponent) childComp = null;
 
-  userList = new Array<any>;
-  username = '';
-  email = '';
-  address = '';
-
+  decVal = 3.85674;
   constructor(){
     // console.log('>> constructor',this.childComp);
   }
@@ -26,11 +22,4 @@ export class AppComponent implements OnInit, AfterViewInit {
     // console.log('>> ngAfterViewInit',this.childComp);
   }
 
-  onAddUser(){
-    this.userList.push({ username: this.username,email:this.email,address:this.address})
-  }
-
-  onDeleteUser(index:any){
-    this.userList.splice(index,1);
-  }
 }
