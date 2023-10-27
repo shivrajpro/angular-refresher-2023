@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormControl, Validators } from '@angular/forms';
+import { noHashChar } from '../validators/nospace.validator';
 
 @Component({
   selector: 'app-post',
@@ -18,6 +19,8 @@ export class PostComponent implements OnInit {
   get phoneNum(){ return this.form.get('contactDetails.phoneNum'); }
   get skills(){ return this.form.get('skills') as FormArray; }
 
+  get fc(){ return this.form.controls; }
+
   constructor(fb:FormBuilder){
     // const postService = new PostService();
     // this.postArr = postService.postList;
@@ -25,7 +28,7 @@ export class PostComponent implements OnInit {
     // if a form has lot of controls
 
     this.form = fb.group({
-      username: ['', [Validators.required]],
+      username: ['', [Validators.required, noHashChar.noHashCharValidations]],
       email: fb.control('', [Validators.email]),
       contactDetails: fb.group({
         address: ['', [Validators.required]],
@@ -63,7 +66,7 @@ export class PostComponent implements OnInit {
 
   onNameChange(){
     console.log('>> username',this.username);
-    console.log('>> email',this.email);    
+    // console.log('>> email',this.email);    
   }
 
   addSkill(skill:HTMLInputElement){

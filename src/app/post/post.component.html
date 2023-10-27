@@ -64,12 +64,16 @@
         name="username"
         formControlName="username"
         (change)="onNameChange()"
-        [class.is-invalid]="username.touched && username.invalid"
+        [class.is-invalid]="fc.username.touched && fc.username.invalid"
       />
 
-      <div *ngIf="username.touched && username.invalid"
+      <div *ngIf="fc.username.touched && fc.username.errors?.required"
       class="mt-2 alert alert-danger">
         Username cannot be empty
+      </div>
+      <div *ngIf="fc.username.touched && fc.username.errors?.noHashCharValidator"
+      class="mt-2 alert alert-danger">
+        Username must not contain #
       </div>
     </div>
     <div class="mb-3">
