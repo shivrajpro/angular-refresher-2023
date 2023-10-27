@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { PostComponent } from './post/post.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { PostListComponent } from './post/post-list/post-list.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PrefixPipe } from './pipes/prefix.pipe';
 import { SummaryPipe } from './pipes/summary.pipe';
 import { PostService } from './services/post.service';
@@ -23,7 +23,8 @@ import { PostService } from './services/post.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

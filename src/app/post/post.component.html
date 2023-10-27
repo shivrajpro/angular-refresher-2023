@@ -1,5 +1,6 @@
-<div class="container">
-  <form #f="ngForm" (submit)="onSubmit(f)" >
+<!-- TEMPLATE DRIVEN FORM -->
+<!-- <div class="container">
+  <form #f="ngForm" (ngSubmit)="onSubmit(f)" >
     <div class="mb-3">
       <label for="exampleInputUsername" class="form-label">Username</label>
       <input
@@ -12,9 +13,12 @@
         name="username"
         #username="ngModel"
         (change)="onNameChange(username)"
+        [class.is-invalid]="username.touched && username.invalid"
         required
+        minlength="5"
+        maxlength="10"
       />
-      <div *ngIf="username.touched && username.invalid" class="alert alert-danger">
+      <div *ngIf="username.touched && username.invalid" class="mt-2 alert alert-danger">
         Username cannot be empty
       </div>
     </div>
@@ -39,7 +43,123 @@
       <input type="checkbox" class="form-check-input" id="exampleCheck1" />
       <label class="form-check-label" for="exampleCheck1">Add Background</label>
     </div>
-    <button type="submit" class="btn btn-primary mx-2">Submit</button>
+    <button type="submit" class="btn btn-primary mx-2" [disabled]="f.invalid" >Submit</button>
+    <button type="reset" class="btn btn-secondary">Reset</button>
+  </form>
+</div> -->
+
+
+<!-- REACTIVE FORM -->
+<br><br>
+<div class="container">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" >
+    <div class="mb-3">
+      <label for="exampleInputUsername" class="form-label">Username</label>
+      <input
+        type="email"
+        class="form-control"
+        id="exampleInputUsername"
+        placeholder="username"
+  
+        name="username"
+        formControlName="username"
+        (change)="onNameChange()"
+        [class.is-invalid]="username.touched && username.invalid"
+      />
+
+      <div *ngIf="username.touched && username.invalid"
+      class="mt-2 alert alert-danger">
+        Username cannot be empty
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Email ID</label>
+      <input
+        type="email"
+        class="form-control"
+        id="exampleInputEmail1"
+        aria-describedby="emailHelp"
+        placeholder="email"
+
+        formControlName="email"
+      />
+      <div *ngIf="email.touched && email.errors?.email"
+      class="mt-2 alert alert-danger">
+        Invalid email entered
+      </div>
+    </div>
+    <div class="mb-3" formGroupName="contactDetails" >
+      <div class="mb-3">
+        <div class="form-outline">
+          <label class="form-label" for="textAreaExample">Address</label>
+          <textarea class="form-control" placeholder="address" 
+          id="textAreaExample1" rows="4" formControlName="address" ></textarea>
+
+          <div *ngIf="address.touched && address.invalid" 
+          class="mt-2 alert alert-danger">
+            Address is required
+          </div>
+        </div>    
+      </div>
+
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Pincode</label>
+        <input
+          type="number"
+          class="form-control"
+          id="exampleInputPincode"
+          placeholder="pincode"
+  
+          formControlName="pincode"
+        />
+        <div *ngIf="pincode.touched && pincode.invalid"
+        class="mt-2 alert alert-danger">
+          is required
+        </div>
+      </div>      
+
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Phone Number</label>
+        <input
+          type="pincode"
+          class="form-control"
+          id="exampleInputPhoneNum"
+          placeholder="phone number"
+  
+          formControlName="phoneNum"
+        />
+        <div *ngIf="phoneNum.touched && phoneNum.invalid"
+        class="mt-2 alert alert-danger">
+          is required
+        </div>
+      </div>     
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Skills</label>
+      <input
+        type="pincode"
+        class="form-control"
+        id="exampleInputSkills"
+        placeholder="skills"
+
+        #skill
+        (keyup.enter)="addSkill(skill)"
+      />
+
+      <div class="mt-2">
+        <ul class="list-group">
+          <li class="list-group-item" *ngFor="let skill of skills.controls; let i = index;">
+            {{skill.value}}
+            <a class="btn btn-sm btn-danger" (click)="removeSkill(i)" > X</a>
+          </li>
+        </ul>
+      </div>
+    </div>     
+    <div class="mb-3 form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1" />
+      <label class="form-check-label" for="exampleCheck1">Add Background</label>
+    </div>
+    <button type="submit" class="btn btn-primary mx-2" [disabled]="form.invalid" >Submit</button>
     <button type="reset" class="btn btn-secondary">Reset</button>
   </form>
 </div>
