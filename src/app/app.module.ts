@@ -9,6 +9,7 @@ import { PostListComponent } from './post/post-list/post-list.component';
 import { FormsModule } from '@angular/forms';
 import { PrefixPipe } from './pipes/prefix.pipe';
 import { SummaryPipe } from './pipes/summary.pipe';
+import { PostService } from './services/post.service';
 
 @NgModule({
   declarations: [

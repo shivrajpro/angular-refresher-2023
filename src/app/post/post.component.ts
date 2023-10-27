@@ -1,23 +1,17 @@
 import { Component, EventEmitter, Output } from '@angular/core';
+import { PostService } from '../services/post.service';
 
 @Component({
   selector: 'app-post',
   templateUrl: './post.component.html',
-  styleUrls: ['./post.component.scss']
+  styleUrls: ['./post.component.scss'],
+  // providers: [PostService]
 })
 export class PostComponent {
-  postsList = "message from post component"
-  outputChildMsg = "message from post via Output";
+  postArr:any =  null;
 
-  @Output() msgEvt = new EventEmitter<String>();
-
-  postTitle = '';
-  imgUrl = '';
-  postDetails = '';
-  postUrl = '';
-  hasBg = false;
-
-  sendMsg(){
-    this.msgEvt.emit(this.outputChildMsg);
+  constructor(postService: PostService){
+    // const postService = new PostService();
+    this.postArr = postService.postList;
   }
 }

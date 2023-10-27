@@ -1,22 +1,6 @@
+<h1>Post Array</h1>
+<p> {{postArr | json}} </p>
 
-<div class="form">
-    <input type="text" [(ngModel)]="postTitle" placeholder="post title" >
-    <textarea cols="30" rows="10" [(ngModel)]="postDetails" placeholder="post details" ></textarea>
-    <input type="text" [(ngModel)]="imgUrl" placeholder="image url" >
-    <input type="text" [(ngModel)]="postUrl" placeholder="post url" >
-    
-    <p>
-        <input type="checkbox" [(ngModel)]="hasBg">
-        <label>Add Background</label>
-    </p>
-</div>
 
-<div class="form-result">
-    <h2> <span [class.highlight]="hasBg">{{postTitle}}</span></h2>
-    <img [src]="imgUrl" alt="post image" height="300" width="300" >
-    <p> {{postDetails}} </p>
-    <p>
-        <a [href]="postUrl" target="_blank" [style.display]="postUrl ? 'block':'none' "> More details </a>
-    </p>
-</div>
-
+<h2>Post List Component</h2>
+<app-post-list></app-post-list>

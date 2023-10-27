@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { PostService } from 'src/app/services/post.service';
 
 @Component({
   selector: 'app-post-list',
@@ -6,5 +7,11 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./post-list.component.scss']
 })
 export class PostListComponent {
-  @Input() fromParent:string = '';
+  postArr:any = null;
+
+  constructor(postService: PostService){
+    // const postService = new PostService();
+    this.postArr = postService.postList;
+  }
+
 }
