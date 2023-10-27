@@ -1,6 +1,45 @@
-<h1>Post Array</h1>
-<p> {{postArr | json}} </p>
+<div class="container">
+  <form #f="ngForm" (submit)="onSubmit(f)" >
+    <div class="mb-3">
+      <label for="exampleInputUsername" class="form-label">Username</label>
+      <input
+        type="email"
+        class="form-control"
+        id="exampleInputUsername"
+        placeholder="username"
 
-
-<h2>Post List Component</h2>
-<app-post-list></app-post-list>
+        ngModel
+        name="username"
+        #username="ngModel"
+        (change)="onNameChange(username)"
+        required
+      />
+      <div *ngIf="username.touched && username.invalid" class="alert alert-danger">
+        Username cannot be empty
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Email ID</label>
+      <input
+        type="email"
+        class="form-control"
+        id="exampleInputEmail1"
+        aria-describedby="emailHelp"
+        placeholder="email"
+      />
+    </div>
+    <div class="mb-3">
+      <div class="form-outline">
+        <label class="form-label" for="textAreaExample">Address</label>
+        <textarea class="form-control" placeholder="address" 
+        id="textAreaExample1" rows="4"></textarea>
+      </div>    
+    </div>
+    <div class="mb-3 form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1" />
+      <label class="form-check-label" for="exampleCheck1">Add Background</label>
+    </div>
+    <button type="submit" class="btn btn-primary mx-2">Submit</button>
+    <button type="reset" class="btn btn-secondary">Reset</button>
+  </form>
+</div>
