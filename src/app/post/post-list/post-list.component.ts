@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { PostService } from 'src/app/services/post.service';
 
 @Component({
@@ -9,9 +10,14 @@ import { PostService } from 'src/app/services/post.service';
 export class PostListComponent {
   postArr:any = null;
 
-  constructor(postService: PostService){
+  constructor(postService: PostService, route:ActivatedRoute){
     // const postService = new PostService();
     this.postArr = postService.postList;
+
+    route.queryParamMap.subscribe((queryParams)=>{
+      console.log('>> q',queryParams);
+      
+    })
   }
 
 }

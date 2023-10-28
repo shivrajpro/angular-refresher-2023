@@ -10,6 +10,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PrefixPipe } from './pipes/prefix.pipe';
 import { SummaryPipe } from './pipes/summary.pipe';
 import { PostService } from './services/post.service';
+import { PostDetailComponent } from './post/post-detail/post-detail.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { PostService } from './services/post.service';
     NavbarComponent,
     PostListComponent,
     PrefixPipe,
-    SummaryPipe
+    SummaryPipe,
+    PostDetailComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
