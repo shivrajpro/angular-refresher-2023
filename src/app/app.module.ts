@@ -12,6 +12,7 @@ import { SummaryPipe } from './pipes/summary.pipe';
 import { PostService } from './services/post.service';
 import { PostDetailComponent } from './post/post-detail/post-detail.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { SignalsComponent } from './signals/signals.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     PrefixPipe,
     SummaryPipe,
     PostDetailComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    SignalsComponent
   ],
   imports: [
     BrowserModule,
