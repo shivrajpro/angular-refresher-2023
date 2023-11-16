@@ -1,0 +1,53 @@
+<div class="container" id="contentToConvert" #screen>
+    <div class="item">
+        <img src="assets/images/sea-wave.jpg" alt="sea-wave" height="380" width="380">
+    </div>
+    <div class="item">
+        <highcharts-chart
+        [Highcharts]="Highcharts"
+        [options]="chartOptions"
+      ></highcharts-chart>
+      
+    </div>
+    <div class="item">
+        <table id="table" class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">First</th>
+                    <th scope="col">Last</th>
+                    <th scope="col">Handle</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>Larry</td>
+                    <td>the Bird</td>
+                    <td>@twitter</td>
+                </tr>
+            </tbody>
+        </table>
+        
+    </div>
+</div>
+<button (click)="convetToPDF()">PDF</button>
+<button (click)="convetToImg()">Download</button>
+
+
+<div id="download">
+    <img #canvas>
+    <a #downloadLink></a>
+</div>

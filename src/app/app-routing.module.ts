@@ -11,11 +11,11 @@ const routes: Routes = [
   //   path:'**',
   //   component:PageNotFoundComponent 
   // },
-  {
-    path:'',
-    pathMatch:'full',
-    redirectTo:'posts' 
-  },
+  // {
+  //   path:'',
+  //   pathMatch:'full',
+  //   redirectTo:'posts' 
+  // },
   {
     path:'posts',
     component: PostListComponent,

@@ -16,6 +16,8 @@ import { SignalsComponent } from './signals/signals.component';
 import { CommonModule } from '@angular/common';
 import { LockInputComponent } from './lock-input/lock-input.component';
 import { ValueAccessorComponent } from './value-accessor-component/value-accessor-component.component';
+import { HighchartsChartModule } from 'highcharts-angular';
+import { HtmlToPdfComponent } from './html-to-pdf/html-to-pdf.component';
 
 @NgModule({
   declarations: [
@@ -29,13 +31,15 @@ import { ValueAccessorComponent } from './value-accessor-component/value-accesso
     PageNotFoundComponent,
     SignalsComponent,
     LockInputComponent,
-    ValueAccessorComponent
+    ValueAccessorComponent,
+    HtmlToPdfComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HighchartsChartModule
   ],
   providers: [],
   bootstrap: [AppComponent]
