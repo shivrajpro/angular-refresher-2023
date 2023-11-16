@@ -13,6 +13,9 @@ import { PostService } from './services/post.service';
 import { PostDetailComponent } from './post/post-detail/post-detail.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { SignalsComponent } from './signals/signals.component';
+import { CommonModule } from '@angular/common';
+import { LockInputComponent } from './lock-input/lock-input.component';
+import { ValueAccessorComponent } from './value-accessor-component/value-accessor-component.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,9 @@ import { SignalsComponent } from './signals/signals.component';
     SummaryPipe,
     PostDetailComponent,
     PageNotFoundComponent,
-    SignalsComponent
+    SignalsComponent,
+    LockInputComponent,
+    ValueAccessorComponent
   ],
   imports: [
     BrowserModule,
