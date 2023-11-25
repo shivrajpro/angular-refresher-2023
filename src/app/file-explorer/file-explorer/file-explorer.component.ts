@@ -13,8 +13,8 @@ import { RenameDialogComponent } from '../modals/rename-dialog/rename-dialog.com
 export class FileExplorerComponent {
   constructor(private dialog: MatDialog) {}
 
-  @Input() fileElements!: FileElement[];
-  @Input() canNavigateUp!: string;
+  @Input() fileElements!: FileElement[] | any ;
+  @Input() canNavigateUp!: boolean;
   @Input() path!: string;
 
   @Output() folderAdded = new EventEmitter<{ name: string }>();

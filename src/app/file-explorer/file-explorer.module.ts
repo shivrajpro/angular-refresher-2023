@@ -33,6 +33,7 @@ import { RenameDialogComponent } from './modals/rename-dialog/rename-dialog.comp
     MatInputModule,
     FormsModule,
     MatButtonModule
-  ]
+  ],
+  exports:[FileExplorerComponent]
 })
 export class FileExplorerModule { }
