@@ -1,7 +1,28 @@
-.highlight{
-    background:yellowgreen;
+p.highlight{
+    background: yellowgreen;
 }
+.container{
+    margin: 2rem;
+}
+.product{
+    width: 20rem;
+    height: 20rem;
+    padding: 1rem;
+    text-align: center;
+    border: 1px solid gray;
+    border-radius: 8px;
+    transition: transform 0.3s;
+    
+    &.highlight {
+        // background: yellowgreen;
+        transform: scale(1.1);
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+    &:hover{
+        cursor: pointer;
+    }
 
-.make-bold{
-    font-weight: 700;
+    p{
+        margin-top: 0.5rem;
+    }
 }

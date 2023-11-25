@@ -18,6 +18,7 @@ import { LockInputComponent } from './lock-input/lock-input.component';
 import { ValueAccessorComponent } from './value-accessor-component/value-accessor-component.component';
 import { HighchartsChartModule } from 'highcharts-angular';
 import { HtmlToPdfComponent } from './html-to-pdf/html-to-pdf.component';
+import { HighlightDirective } from './directives/highlight.directive';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,9 @@ import { HtmlToPdfComponent } from './html-to-pdf/html-to-pdf.component';
     SignalsComponent,
     LockInputComponent,
     ValueAccessorComponent,
-    HtmlToPdfComponent
+    HtmlToPdfComponent,
+
+    HighlightDirective
   ],
   imports: [
     BrowserModule,
