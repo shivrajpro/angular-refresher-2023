@@ -6,6 +6,29 @@
     <br>
     <button class="btn-primary" appBtnHover>Add to Cart</button>
 </div>
+<div class="container">
+    <button class="btn-primary" appBtnHover (click)="showPara = !showPara">
+        {{showPara ? 'Hide':'Show'}} Para
+    </button>
+
+    <!-- working of ngIf 
+    https://www.youtube.com/watch?v=oTo7w9Ocnp8&list=PL1BztTYDF-QNlGo5-g65Xj1mINHYk_FM9&index=56&pp=iAQB
+    -->
+    <!-- <ng-template [ngIf]="showPara" [ngIfElse]="heading"> 
+        under the hood. remove *ngIf -->
+        <div class="para"  *ngIf="showPara; else heading">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, velit.</p>
+        </div>
+    <!-- </ng-template> -->
+    <ng-template #heading>
+        <h2>Lorem ipsum dolor sit.</h2>
+    </ng-template>
+
+
+    <p *appMyIf="showPara" >
+        Implemented my own ngIf
+    </p>
+</div>
 <!-- <div class="container">
     <h1>Angular Blog Site</h1>
     <button class="btn btn-primary"

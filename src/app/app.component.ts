@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit, AfterViewInit {
+  showPara:boolean = false;
   @ViewChild(PostComponent) childComp = null;
 
   decVal = 3.85674;

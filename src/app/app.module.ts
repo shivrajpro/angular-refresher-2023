@@ -20,6 +20,7 @@ import { HighchartsChartModule } from 'highcharts-angular';
 import { HtmlToPdfComponent } from './html-to-pdf/html-to-pdf.component';
 import { HighlightDirective } from './directives/highlight.directive';
 import { BtnHoverDirective } from './directives/btn-hover.directive';
+import { MyIfDirective } from './directives/my-if.directive';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { BtnHoverDirective } from './directives/btn-hover.directive';
     HtmlToPdfComponent,
 
     HighlightDirective,
-      BtnHoverDirective
+      BtnHoverDirective,
+      MyIfDirective
   ],
   imports: [
     BrowserModule,
