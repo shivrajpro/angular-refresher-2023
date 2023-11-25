@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { FileElement } from './file-explorer/model/file-element';
-import { Observable, of } from 'rxjs';
 import { FileService } from './services/file.service';
 
 @Component({

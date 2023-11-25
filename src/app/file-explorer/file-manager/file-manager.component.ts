@@ -6,11 +6,11 @@ import { NewFolderDialogComponent } from '../modals/new-folder-dialog/new-folder
 import { RenameDialogComponent } from '../modals/rename-dialog/rename-dialog.component';
 
 @Component({
-  selector: 'app-file-explorer',
-  templateUrl: './file-explorer.component.html',
-  styleUrls: ['./file-explorer.component.scss'],
+  selector: 'app-file-manager',
+  templateUrl: './file-manager.component.html',
+  styleUrls: ['./file-manager.component.scss'],
 })
-export class FileExplorerComponent {
+export class FileManagerComponent {
   constructor(private dialog: MatDialog) {}
 
   @Input() fileElements!: FileElement[] | any ;

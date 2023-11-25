@@ -1,6 +1,6 @@
 <div style="padding: 100px; height: 100%; box-sizing: border-box;">
   <mat-card style="height: 100%; box-sizing: border-box; padding:0">
-    <app-file-explorer
+    <app-file-manager
       [fileElements]="fileElements | async"
       [path]="currentPath"
       [canNavigateUp]="canNavigateUp"
@@ -11,6 +11,6 @@
       (elementRenamed)="renameElement($event)"
       (elementMoved)="moveElement($event)"
     >
-    </app-file-explorer>
+    </app-file-manager>
   </mat-card>
 </div>
