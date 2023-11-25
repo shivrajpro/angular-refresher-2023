@@ -1,0 +1,22 @@
+https://malcoded.com/posts/angular-file-explorer-component/
+
+Steps:
+ 1. create a file explorer module
+ 2. install material, uuid and add material icons CDN
+ 3. create FileElement model with props: id, isFolder, name and parent
+ 4. create file manager component with following props:
+    input: fileElements[], canNavigateUp, path
+    methods/events: folderAdded(name), elementRenamed(file), elementDeleted(file), elementMoved(file, moveTo)
+    output: navigatedUp, navigatedDown
+ 5. add the context menu that contains: move to (nested menu), rename and delete
+ 6. add methods : add methods to open new folder dialog, rename dialog and openMenu
+Till this point we have created the dumb component for file manager
+ 7. create a file service that contains CRUD methods: add, update, delete and read
+ 8. in our app component start using the file manager component with below props:
+    variables: fileElements, currentRoot, path, canNavigateUp
+    methods: CRUD methods which will be emitted from FM
+    in our service we also need one method will update the data after each operation
+    updateFileElements: which takes current path / root path as input and returns the updated data
+
+  9. now we also need couple of methods which will push and pop folder names
+     as we navigate up and down through our explorer

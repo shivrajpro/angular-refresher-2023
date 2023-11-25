@@ -31,7 +31,7 @@ export class FileManagerComponent {
     this.elementRemoved.emit(element);
   }
 
-  navigate(element: FileElement) {
+  navigateDown(element: FileElement) {
     if (element.isFolder) {
       this.navigatedDown.emit(element);
     }
