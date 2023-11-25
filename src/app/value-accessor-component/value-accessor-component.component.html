@@ -1,7 +1,0 @@
-<form [formGroup]="form" >
-    <input type="text" placeholder="enter text" formControlName="itemName" >
-    <br>
-    <app-lock-input formControlName="locked" ></app-lock-input>
-    <button [disabled]="!form.touched" (click)="onAddItem()" >Add Item</button>
-    <button (click)="onLockToggle()"> {{form.value.locked ? 'Unlock': 'Lock'}}  </button>
-</form>
