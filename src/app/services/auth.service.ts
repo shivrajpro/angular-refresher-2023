@@ -7,6 +7,9 @@ export class AuthService {
     private user!: User;
 
     isAuthorized() {
+        const user = localStorage.getItem('user');
+        if(user) this.user = user as any;
+
         return !!this.user;
     }
 
@@ -15,10 +18,12 @@ export class AuthService {
     }
 
     login(role: Role) {
+      localStorage.setItem("user","abcd");
       this.user = { role: role };
     }
 
     logout() {
+      localStorage.clear();
       this.user = null!;
     }
 }
